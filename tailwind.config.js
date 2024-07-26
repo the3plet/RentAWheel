@@ -4,7 +4,12 @@ module.exports = {
     "./src/**/*.{html,ts}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        // Add your Google Font here
+        title: ['Barlow Condensed'],
+      },
+    },
   },
   plugins: [],
 }

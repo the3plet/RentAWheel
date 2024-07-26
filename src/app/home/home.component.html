@@ -1,5 +1,5 @@
-<div class="flex flex-wrap justify-center">
-    <div *ngFor="let item of cars" class="flex justify-center flex-nowrap flex-col items-center text-white p-4 w-1/2  ">
+<div class="flex flex-wrap justify-center ">
+    <div *ngFor="let item of cars" class="flex justify-center flex-nowrap flex-col items-center text-white p-4 w-1/2" (click)="navigate()">
       <img [src]="item.carImage" alt="data" class="rounded-xl" />
       <p class="text-base font-mono py-2">{{ item.brand }}</p>
     </div>
