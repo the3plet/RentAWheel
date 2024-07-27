@@ -8,6 +8,8 @@ module.exports = {
         title: ["Barlow Condensed"],
         footer: ["Zain"],
         carlist:["DM Sans"],
+        carHeading:["Overpass"],
+        icon:["Material Symbols Outlined"]
       },
       keyframes: {
         roll: {
@@ -17,7 +19,7 @@ module.exports = {
       },
       animation: {
         roll: "roll 15s linear infinite",
-        rollLg: "roll 25s linear infinite",
+        rollLg: "roll 28s linear infinite",
       },
     },
   },

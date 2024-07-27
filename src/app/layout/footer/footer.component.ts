@@ -8,6 +8,6 @@ import { Component } from '@angular/core';
   styleUrl: './footer.component.scss',
 })
 export class FooterComponent {
-  qoutes: string = 'Sometimes the best therapy is a long drive';
+  qoutes: string = 'Sometimes the best therapy is to go for a long drive';
   maker: string = '#PoweredByTeamRentACar';
 }

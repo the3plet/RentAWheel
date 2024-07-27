@@ -11,4 +11,7 @@ export class HomeService {
   getCars(){
     return this.http.get<CarsResponse>('/api/CarRentalApp/GetCars')
   }
+  // getBookings(){
+  //   return RouterTestingHarness.http.get
+  // }
 }
