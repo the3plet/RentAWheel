@@ -6,32 +6,34 @@
   </div>
   <p>hi</p> -->
 
-<div class="grid grid-cols-3 gap-1">
+<div class="grid grid-cols-3 gap-1 lg:flex lg:flex-wrap lg:justify-center lg:items-center">
   <div
     *ngFor="let item of cars; let i = index"
     [ngClass]="{
       'col-span-1 ': i % 4 === 0 || i % 4 === 1,
-      'col-span-3 m-4 ': i % 4 === 3 || i % 4 === 3
+      'col-span-3 m-4 ': i % 4 === 3 || i % 4 === 3,
+      'lg:w-[20%] lg:px-4':true
     }"
-    class="text-white p-1 cursor-pointer"
+    class="text-white p-1 cursor-pointer "
     (click)="navigate()"
   >
     <img
       [src]="item.carImage"
       alt="data"
-      class="rounded-xl aspect-[14/16] object-cover"
+      class="rounded-xl aspect-[14/16] object-cover lg:aspect-video"
     />
     <div
       [ngClass]="{
         'justify-start': i % 4 === 2 || i % 4 === 3,
-        'justify-evenly': i % 4 === 0 || i % 4 === 1
+        'justify-evenly': i % 4 === 0 || i % 4 === 1,
+       
       }"
-      class="p-1 py-2 flex w-full "
+      class="p-1 py-2 flex w-full lg:justify-start "
     >
-      <p class="flex items-center text-sm font-carlist px-1 uppercase ">
+      <p class="flex items-center text-sm lg:text-base font-carlist px-1 uppercase ">
         {{ item.model }}
       </p>
-      <p class="flex items-center text-xs font-carlist opacity-60 px-1">
+      <p class="flex items-center text-xs lg:text-sm font-carlist opacity-60 px-1">
         {{ "₹" + item.dailyRate }}
       </p>
     </div>
