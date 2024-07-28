@@ -9,12 +9,12 @@ export class ApiService {
 
   constructor(private http:HttpClient) { }
   getCars(){
-    return this.http.get<CarsResponse>('https://freeapi.gerasim.in/api/CarRentalApp/GetCars')
+    return this.http.get<CarsResponse>('/api/CarRentalApp/GetCars')
   }
   // getBookings(){
   //   return RouterTestingHarness.http.get
   // }
   getBookings(){
-    return this.http.get<BookingResponse>('https://freeapi.gerasim.in/api/CarRentalApp/geAllBookings')
+    return this.http.get<BookingResponse>('/api/CarRentalApp/geAllBookings')
   }
 }
