@@ -1,5 +1,5 @@
 [[redirects]]
   from = "/api/*"
-  to = "https://freeapi.gerasim.in/api/CarRentalApp/:splat"
+  to = "https://freeapi.gerasim.in/:splat"
   status = 200
   force = true
