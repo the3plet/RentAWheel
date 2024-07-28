@@ -9,6 +9,7 @@ module.exports = {
         footer: ["Zain"],
         carlist:["DM Sans"],
         carHeading:["Overpass"],
+        homeHeading:["Kanit"],
         icon:["Material Symbols Outlined"]
       },
       keyframes: {

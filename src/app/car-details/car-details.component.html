@@ -1,36 +1,47 @@
-
 <div class="">
-
   <img
-  [src]="carInfo?.carImage"
-  class="h-[50vh] object-cover bg-green-500 border-b-8 border-black rounded-b-3xl "
+    [src]="carInfo?.carImage"
+    class="h-[50vh] object-cover bg-green-500 border-b-8 border-black rounded-b-3xl lg:w-screen lg:h-[60vh]"
   />
 </div>
 
-<h1 class="font-carHeading font-bold text-4xl p-4 pb-0">{{carInfo?.brand}} {{carInfo?.model}}</h1>
-<h1 class="font-carHeading font-normal text-xl pl-4 leading-4">{{carInfo?.year}}</h1>
-<div class="m-6 mb-2 mt-3 bg-[#151515d6] rounded-3xl">
+<h1 class="font-carHeading font-bold text-4xl p-4 lg:px-16 pb-0">
+  {{ carInfo?.brand }} {{ carInfo?.model }}
+</h1>
+<h1 class="font-carHeading font-normal text-xl pl-4 lg:px-16 leading-4">
+  {{ carInfo?.year }}
+</h1>
+<div class="m-6 mb-2 mt-3 lg:my-3 lg:mx-16 bg-[#151515d6] rounded-3xl lg:px-15">
   <div class="p-4 py-2">
     <h1 class="text-xl font-extralight">Car Details:</h1>
     <div class="flex justify-start gap-6 items-center">
       <span class="flex font-light">
-        <span class="font-icon text-lg flex pr-1 items-center">format_paint</span>
-        <p class="text-base flex items-center uppercase">{{carInfo?.color}}</p>
+        <span class="font-icon text-lg flex pr-1 items-center"
+          >format_paint</span
+        >
+        <p class="text-base flex items-center uppercase">
+          {{ carInfo?.color }}
+        </p>
       </span>
       <span class="flex items-center font-light">
         <span class="font-icon text-lg flex items-center p-1">money</span>
-        <p class="text-base flex items-center uppercase">{{carInfo?.regNo}}</p>
+        <p class="text-base flex items-center uppercase">
+          {{ carInfo?.regNo }}
+        </p>
       </span>
     </div>
   </div>
 </div>
-<div class="flex justify-between  bg-black bottom-0 mt-2 h-auto">
-  <div class="flex-col justify-start  p-6 pt-0">
+<div class="flex justify-between bg-black bottom-0 mt-2 h-auto lg:mx-16 lg:pt-10">
+  <div class="flex-col justify-start p-6 pt-0 lg:items-center">
     <p>rate</p>
-    <h1 class="font-carHeading text-4xl">₹{{carInfo?.dailyRate}}</h1>
+    <h1 class="font-carHeading text-4xl">₹{{ carInfo?.dailyRate }}</h1>
   </div>
   <div class="flex items-center m-6 ml-0 mb-5 mr-2 mt-0">
-    <button class="font-carHeading px-14 text-nowrap font-bold text-black text-xl flex items-center justify-center py-2 rounded-full  bg-white" (click)="book()">
+    <button
+      class="font-carHeading px-14 text-nowrap font-bold text-black text-xl flex items-center justify-center py-2 rounded-full bg-white"
+      (click)="book()"
+    >
       Book Now
     </button>
   </div>
