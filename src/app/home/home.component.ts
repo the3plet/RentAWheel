@@ -1,5 +1,5 @@
 import { Component, inject, OnInit } from '@angular/core';
-import { HomeService } from '../services/home.service';
+import { ApiService } from '../services/api.service';
 import { Car } from '../../models/type';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
@@ -13,7 +13,7 @@ import { SharedService } from '../services/shared.service';
   styleUrl: './home.component.scss',
 })
 export class HomeComponent implements OnInit {
-  homeApi = inject(HomeService);
+  homeApi = inject(ApiService);
   route = inject(Router);
   sharedService = inject(SharedService);
 

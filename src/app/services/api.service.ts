@@ -1,11 +1,11 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { CarsResponse } from '../../models/type';
+import { BookingResponse, CarsResponse } from '../../models/type';
 
 @Injectable({
   providedIn: 'root'
 })
-export class HomeService {
+export class ApiService {
 
   constructor(private http:HttpClient) { }
   getCars(){
@@ -14,4 +14,7 @@ export class HomeService {
   // getBookings(){
   //   return RouterTestingHarness.http.get
   // }
+  getBookings(){
+    return this.http.get<BookingResponse>('/api/CarRentalApp/geAllBookings')
+  }
 }

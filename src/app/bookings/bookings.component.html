@@ -1,1 +1,35 @@
-<p class="text-white">bookings works!</p>
+<div class="">
+  <div class="flex" *ngIf="openModel">
+    <app-booking-ticket (modelStateChange)="handleModelStateChange($event)" [ticketData]="filteredBookingData"/>
+  </div>
+  <img
+    class="absolute -z-10 lg:h-[90vh] h-[79vh] w-screen object-cover"
+    src="/images/booking-cover-image.jpg"
+  />
+  <div class="flex flex-col justify-center items-center gap-3">
+    <h1
+      class="flex justify-center text-4xl font-sans font-extrabold text-center pt-48"
+    >
+      Forgot your booking details?
+    </h1>
+    <form (ngSubmit)="filterBooking()">
+      <div
+        class="flex items-center gap-1 outline-dashed outline-2 outline-offset-4 outline-sky-500 rounded-md"
+      >
+        <input
+          type="text"
+          class="rounded-md text-center p-2 text-black"
+          placeholder="Mobile number"
+          [(ngModel)]="inputText"
+          name="phone-number"
+        />
+        <button
+          type="submit"
+          class="bg-sky-500 px-6 py-2 rounded-xl text-xl font-mono hover:opacity-80 hover:animate-pulse"
+        >
+          Find
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
