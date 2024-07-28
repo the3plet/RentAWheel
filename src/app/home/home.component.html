@@ -6,11 +6,20 @@
   </div>
   <p>hi</p> -->
 <div>
-  <h1 class="flex justify-center text-3xl lg:text-5xl font-homeHeading font-bold pt-14">
+  <h1
+    class="flex justify-center text-3xl lg:text-5xl font-homeHeading font-bold pt-14"
+  >
     Planning For a drive?
   </h1>
-  <p class="flex justify-center font-homeHeading lg:text-xl pb-14">we got you covered😇</p>
+  <p class="flex justify-center font-homeHeading lg:text-xl pb-14">
+    we got you covered😇
+  </p>
 </div>
+<p
+  class="flex justify-start pl-3 text-md font-carlist font-bold lg:justify-center text-xl"
+>
+  Currently avilable:
+</p>
 <div
   class="grid grid-cols-3 lg:flex lg:flex-wrap lg:justify-center lg:items-center"
 >
@@ -21,13 +30,13 @@
       'col-span-3 m-4 ': i % 4 === 3 || i % 4 === 3,
       'lg:w-[20%] lg:px-4': true
     }"
-    class="text-white p-1 cursor-pointer"
+    class="text-white p-1 cursor-pointer hover:scale-110"
     (click)="getCarDetails(item)"
   >
     <img
       [src]="item.carImage"
       alt="data"
-      class="rounded-lg aspect-[14/16] h-auto object-cover lg:aspect-video"
+      class="rounded-lg aspect-[14/16] h-auto object-cover lg:aspect-video hover:ring-2 hover:ring-white"
     />
     <div
       [ngClass]="{

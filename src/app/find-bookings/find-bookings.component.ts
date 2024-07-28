@@ -6,13 +6,13 @@ import { BookingTicketComponent } from '../components/booking-ticket/booking-tic
 import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'app-bookings',
+  selector: 'app-find-bookings',
   standalone: true,
   imports: [FormsModule, BookingTicketComponent, CommonModule],
-  templateUrl: './bookings.component.html',
-  styleUrl: './bookings.component.scss',
+  templateUrl: './find-bookings.component.html',
+  styleUrl: './find-bookings.component.scss',
 })
-export class BookingsComponent implements OnInit {
+export class FindBookingsComponent implements OnInit {
   http = inject(ApiService);
 
   inputText: string = '';
