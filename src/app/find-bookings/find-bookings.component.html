@@ -25,13 +25,30 @@
           placeholder="Mobile number"
           [(ngModel)]="inputText"
           name="phone-number"
+          required
+          pattern="[0-9]{10}"
+          #phoneNumber="ngModel"
         />
         <button
           type="submit"
           class="bg-sky-500 px-6 py-2 rounded-xl text-xl font-mono hover:opacity-80 hover:animate-pulse"
+          [disabled]="inputText.length == 0"
         >
           Find
         </button>
+      </div>
+      <div
+        *ngIf="
+          phoneNumber.invalid && (phoneNumber.dirty || phoneNumber.touched)
+        "
+        class="text-red-500"
+      >
+        <small *ngIf="phoneNumber.errors?.['required']"
+          >Mobile number is required.</small
+        >
+        <small *ngIf="phoneNumber.errors?.['pattern']"
+          >Enter a valid 10-digit mobile number.</small
+        >
       </div>
     </form>
   </div>
