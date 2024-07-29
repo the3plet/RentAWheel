@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { SharedService } from '../services/shared.service';
 import { Car } from '../../models/type';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-car-details',
@@ -10,6 +11,9 @@ import { Car } from '../../models/type';
   styleUrl: './car-details.component.scss',
 })
 export class CarDetailsComponent implements OnInit {
+
+router = inject(Router)
+
   carInfo: Car | undefined;
 
   constructor(private sharedInfo: SharedService) {}
@@ -21,7 +25,8 @@ export class CarDetailsComponent implements OnInit {
     }
     console.log(this.carInfo);
   }
-  book(){
-    alert("Your Booking is successfull, Our representative will contact you shortly.")
+  handleBooking(){
+    this.router.navigate(['rental-bookings'])
+
   }
 }

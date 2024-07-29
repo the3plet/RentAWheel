@@ -1,0 +1,131 @@
+<div class="w-full flex justify-center items-center h-[90vh]">
+  <div class="bg-[#27282a] rounded-xl bg-opacity-50 m-4">
+    <h1 class="font-footer text-center text-4xl p-4 pb-2 pt-8 px-8">
+      Do fill the details to confirm your booking
+    </h1>
+    <form
+      [formGroup]="bookingForm"
+      (ngSubmit)="onSubmit()"
+      class="p-6 pt-2 flex-col flex justify-center items-center"
+    >
+      <div>
+        <div class="flex flex-col p-1 gap-1">
+          <label for="Name" class="font-mono">Full name</label>
+          <input
+            id="Name"
+            formControlName="CustomerName"
+            type="text"
+            class="rounded-md lg:px-8 text-black"
+          />
+          <small
+            class="text-red-500"
+            *ngIf="
+              bookingForm.get('CustomerName')?.invalid &&
+              bookingForm.get('CustomerName')?.touched
+            "
+          >
+            Name is required.
+          </small>
+        </div>
+
+        <div class="flex flex-col p-1 gap-1">
+          <label for="City" class="font-mono"> City</label>
+          <input
+            id="City"
+            formControlName="City"
+            type="text"
+            class="rounded-md lg:px-8 text-black"
+          />
+          <small
+            class="text-red-500"
+            *ngIf="
+              bookingForm.get('City')?.invalid &&
+              bookingForm.get('City')?.touched
+            "
+          >
+            City is required.
+          </small>
+        </div>
+
+        <div class="flex flex-col p-1 gap-1">
+          <label for="MobileNo" class="font-mono">Mobile No</label>
+          <input
+            id="MobileNo"
+            formControlName="MobileNo"
+            type="text"
+            class="rounded-md lg:px-8 text-black"
+          />
+          <small
+            class="text-red-500"
+            *ngIf="
+              bookingForm.get('MobileNo')?.invalid &&
+              bookingForm.get('MobileNo')?.touched
+            "
+          >
+            Please enter a valid mobile number.
+          </small>
+        </div>
+
+        <div class="flex flex-col p-1 gap-1">
+          <label for="Email" class="font-mono">Email</label>
+          <input
+            id="Email"
+            formControlName="Email"
+            class="rounded-md lg:px-8 text-black"
+          />
+          <small
+            class="text-red-500"
+            *ngIf="
+              bookingForm.get('Email')?.invalid &&
+              bookingForm.get('Email')?.touched
+            "
+          >
+            Please enter a valid email.
+          </small>
+        </div>
+
+        <div class="flex flex-col p-1 gap-1">
+          <label for="BookingDate" class="font-mono">Booking Date</label>
+          <input
+            id="BookingDate"
+            formControlName="BookingDate"
+            type="datetime-local"
+            class="rounded-md lg:px-12 px-4 text-black"
+          />
+          <small
+            class="text-red-500"
+            *ngIf="
+              bookingForm.get('BookingDate')?.invalid &&
+              bookingForm.get('BookingDate')?.touched
+            "
+          >
+            Booking date is required.
+          </small>
+        </div>
+        <div
+          class="w-full rounded-lg h-40 mt-4 flex flex-col items-center border-double border-4 border-white"
+        >
+          <img class="w-full h-[80%]" [src]="carDetails?.carImage" />
+          <div
+            class="flex justify-evenly w-full py-1 items-center h-auto font-footer text-xl"
+          >
+            <p class="font-bold">
+              {{ carDetails?.brand }}{{ carDetails?.model }}
+            </p>
+            <p class="font-medium">{{ carDetails?.regNo }}</p>
+          </div>
+        </div>
+        <button
+          type="submit"
+          [disabled]="bookingForm.invalid"
+          class="mt-4 flex items-center justify-center lg:px-28 rounded-md h-8 bg-black w-full font-semibold hover:ring-1 hover:ring-white"
+        >
+          Book Rental
+        </button>
+        <small routerLink="" class="flex justify-start cursor-pointer pt-1"
+          >Return to Home</small
+        >
+      </div>
+    </form>
+  </div>
+</div>

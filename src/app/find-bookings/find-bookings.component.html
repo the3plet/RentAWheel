@@ -1,6 +1,9 @@
 <div class="">
   <div class="flex" *ngIf="openModel">
-    <app-booking-ticket (modelStateChange)="handleModelStateChange($event)" [ticketData]="filteredBookingData"/>
+    <app-booking-ticket
+      (modelStateChange)="handleModelStateChange($event)"
+      [ticketData]="filteredBookingData"
+    />
   </div>
   <img
     class="absolute -z-10 lg:h-[90vh] h-[79vh] w-screen object-cover"

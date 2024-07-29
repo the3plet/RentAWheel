@@ -15,10 +15,9 @@ export type CarsResponse = {
   data: Car[];
 };
 
-// Define the interface for individual booking records
 export type Booking = {
   bookingId: number;
-  bookingDate: string; // ISO 8601 date format
+  bookingDate: string;
   discount: number;
   totalBillAmount: number;
   customerName: string;
@@ -28,7 +27,17 @@ export type Booking = {
   bookingUid: string;
 };
 
-// Define the type for the overall response structure
+export type CreateBooking = {
+  CustomerName: string;
+  CustomerCity: string;
+  MobileNo: string;
+  Email: string;
+  CarId: number;
+  BookingDate: string;
+  Discount: number;
+  TotalBillAmount: number;
+};
+
 export type BookingResponse = {
   message: string;
   result: boolean;
