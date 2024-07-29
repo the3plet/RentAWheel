@@ -3,9 +3,3 @@ from = "/api/*"
 to = "https://freeapi.gerasim.in/api/CarRentalApp/:splat"
 status = 200
 force = true
-
-[[redirects]]
-from = "/*"
-to = "index.html"
-status = 200
-force = true
